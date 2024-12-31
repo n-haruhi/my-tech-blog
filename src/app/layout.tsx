@@ -32,16 +32,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`${inter.className} bg-gray-50`}>
+      <body className={`${inter.className} bg-[#efece7]`}>
         <div className="min-h-screen flex flex-col">
           {/* ヘッダー */}
-          <header className="bg-white shadow-sm">
+          <header className="bg-[#fcfaf7] shadow-sm">
             <nav className="max-w-4xl mx-auto px-4 py-4">
               <div className="flex justify-between items-center">
-                <a href="/" className="text-xl font-bold">Tech Blog</a>
+                <a href="/" className="text-xl font-bold text-[#000000] hover:text-[#555555]">pen2 Tech Blog</a>
                 <div className="space-x-4">
-                  <a href="/posts" className="hover:text-gray-600">記事一覧</a>
-                  <a href="/about" className="hover:text-gray-600">About</a>
+                  <a href="/posts" className="text-[#000000] hover:text-[#555555]">Article</a>
+                  <a href="/about" className="text-[#000000] hover:text-[#555555]">Profile</a>
                 </div>
               </div>
             </nav>
@@ -53,8 +53,8 @@ export default function RootLayout({
           </main>
 
           {/* フッター */}
-          <footer className="bg-white border-t mt-auto">
-            <div className="max-w-4xl mx-auto px-4 py-6 text-center text-gray-600">
+          <footer className="bg-[#ae8b69] border-t mt-auto">
+            <div className="max-w-4xl mx-auto px-4 py-6 text-center text-[#000000]">
               <p>© {new Date().getFullYear()} Tech Blog. All rights reserved.</p>
             </div>
           </footer>

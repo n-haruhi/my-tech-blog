@@ -39,16 +39,16 @@ export default function TableOfContents() {
   }
 
   return (
-    <nav className="bg-white rounded-lg p-4 shadow-sm mb-8">
-      <h2 className="text-lg font-semibold mb-4">目次</h2>
+    <nav className="bg-white rounded-lg p-4 shadow-sm mb-10">
+      <h2 className="text-lg font-semibold mb-3">目次</h2>
       <ul className="space-y-2">
         {headings.map((heading) => (
           <li
             key={heading.id}
-            style={{ paddingLeft: `${(heading.level - 1) * 1}rem` }}
+            style={{ paddingLeft: `${(heading.level - 1) * 0.875}rem` }}
           >
             
-            <a  href={`#${heading.id}`}
+            <a href={`#${heading.id}`}
               className="text-gray-600 hover:text-blue-600 hover:underline"
             >
               {heading.text}

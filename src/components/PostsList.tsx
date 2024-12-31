@@ -56,7 +56,7 @@ export default function PostsList({ posts }: PostsListProps) {
             placeholder="記事を検索..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-600"
           />
           <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
         </div>
@@ -64,13 +64,13 @@ export default function PostsList({ posts }: PostsListProps) {
 
       {/* タグフィルター */}
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">タグで絞り込む</h2>
+        <h2 className="text-lg font-semibold mb-4 text-gray-900">タグで絞り込む</h2>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedTag(null)}
             className={`px-3 py-1 rounded-full text-sm ${
               selectedTag === null
-                ? 'bg-blue-600 text-white'
+                ? 'bg-[#af8b67] text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -82,7 +82,7 @@ export default function PostsList({ posts }: PostsListProps) {
               onClick={() => setSelectedTag(tag)}
               className={`px-3 py-1 rounded-full text-sm ${
                 selectedTag === tag
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-[#af8b67] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -93,14 +93,14 @@ export default function PostsList({ posts }: PostsListProps) {
       </div>
 
       {/* 記事一覧のヘッダー */}
-      <h1 className="text-3xl font-bold mb-8">
+      <h1 className="text-3xl font-bold mb-8 text-gray-900">
         {selectedTag ? `${selectedTag}の記事一覧` : '全ての記事'}
         {searchQuery && ` - "${searchQuery}"の検索結果`}
         {filteredPosts.length > 0 && ` (${filteredPosts.length}件)`}
       </h1>
 
       {/* 記事一覧 */}
-      <div className="grid gap-6 mb-8">
+      <div className="grid gap-6 mb-8 text-gray-900">
         {paginatedPosts.length > 0 ? (
           paginatedPosts.map((post) => (
             <PostCard key={post.slug} post={post} />

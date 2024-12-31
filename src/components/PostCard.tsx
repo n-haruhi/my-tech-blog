@@ -6,7 +6,7 @@ export default function PostCard({ post }: { post: Post }) {
     <article className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
       <Link href={`/posts/${post.slug}`}>
         <div className="space-y-2">
-          <h2 className="text-xl font-semibold hover:text-blue-600">
+          <h2 className="text-xl font-semibold text-gray-600 hover:text-blue-600">
             {post.title}
           </h2>
           <div className="text-sm text-gray-500">
