@@ -5,8 +5,24 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Tech Blog",
-  description: "技術ブログ",
+  title: {
+    default: 'Tech Blog',
+    template: '%s | Tech Blog'
+  },
+  description: 'フロントエンド開発とシステム設計についての技術ブログ',
+  openGraph: {
+    title: 'Tech Blog',
+    description: 'フロントエンド開発とシステム設計についての技術ブログ',
+    url: 'https://your-domain.com', // あとでVercelのURLに更新
+    siteName: 'Tech Blog',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tech Blog',
+    description: 'フロントエンド開発とシステム設計についての技術ブログ',
+  },
 }
 
 export default function RootLayout({

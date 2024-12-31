@@ -1,6 +1,6 @@
 ---
 title: '技術ブログを作るためのNext.js設定'
-date: '2024-12-30'
+date: '2024-12-31'
 tags: ['Next.js', 'TypeScript', '設定']
 excerpt: 'Next.jsで技術ブログを作るための初期設定と基本的な実装方法について解説します'
 ---

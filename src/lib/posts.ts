@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export type Post = {
+export interface Post {
   slug: string
   title: string
   date: string
