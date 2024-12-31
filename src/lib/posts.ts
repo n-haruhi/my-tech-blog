@@ -57,3 +57,17 @@ export async function getPostData(slug: string): Promise<Post> {
     ...(matterResult.data as { title: string; date: string; tags: string[]; excerpt: string })
   }
 }
+
+// 前後の記事を取得する関数
+export async function getAdjacentPosts(currentSlug: string): Promise<{
+  previous: Post | null
+  next: Post | null
+}> {
+  const posts = getSortedPostsData()
+  const currentIndex = posts.findIndex(post => post.slug === currentSlug)
+
+  return {
+    previous: currentIndex > 0 ? posts[currentIndex - 1] : null,
+    next: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+  }
+}

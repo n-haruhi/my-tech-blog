@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PostCard from '@/components/PostCard'
 import type { Post } from '@/lib/posts'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 type PostsListProps = {
   posts: Post[]
@@ -15,8 +15,11 @@ export default function PostsList({ posts }: PostsListProps) {
     new Set(posts.flatMap(post => post.tags))
   ).sort()
 
+  // 各種state管理
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 5  // 1ページあたりの表示件数
 
   // タグと検索クエリの両方でフィルタリング
   const filteredPosts = posts
@@ -27,6 +30,21 @@ export default function PostsList({ posts }: PostsListProps) {
       post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
     )
+
+  // ページネーションの計算
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  )
+
+  // 検索やタグが変更されたらページを1に戻す
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery, selectedTag])
+
+  // ページ番号の配列を生成
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (
     <div>
@@ -82,9 +100,9 @@ export default function PostsList({ posts }: PostsListProps) {
       </h1>
 
       {/* 記事一覧 */}
-      <div className="grid gap-6">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => (
+      <div className="grid gap-6 mb-8">
+        {paginatedPosts.length > 0 ? (
+          paginatedPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))
         ) : (
@@ -93,6 +111,41 @@ export default function PostsList({ posts }: PostsListProps) {
           </p>
         )}
       </div>
+
+      {/* ページネーション */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center space-x-2">
+          <button
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronLeftIcon className="h-5 w-5" />
+          </button>
+          
+          {pageNumbers.map(number => (
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === number
+                  ? 'bg-blue-600 text-white'
+                  : 'hover:bg-gray-100'
+              }`}
+            >
+              {number}
+            </button>
+          ))}
+          
+          <button
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronRightIcon className="h-5 w-5" />
+          </button>
+        </div>
+      )}
     </div>
   )
 }

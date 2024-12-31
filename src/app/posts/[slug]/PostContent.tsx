@@ -2,13 +2,16 @@
 
 import Markdown from '@/components/Markdown'
 import TableOfContents from '@/components/TableOfContents'
+import PostNavigation from '@/components/PostNavigation'
 import type { Post } from '@/lib/posts'
 
 type Props = {
   post: Post
+  previousPost: Post | null
+  nextPost: Post | null
 }
 
-export default function PostContent({ post }: Props) {
+export default function PostContent({ post, previousPost, nextPost }: Props) {
   return (
     <article className="prose prose-lg max-w-none">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
@@ -33,6 +36,9 @@ export default function PostContent({ post }: Props) {
       <div className="prose prose-blue">
         <Markdown content={post.content} />
       </div>
+
+      {/* ナビゲーション */}
+      <PostNavigation previous={previousPost} next={nextPost} />
     </article>
   )
 }

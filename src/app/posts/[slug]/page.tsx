@@ -1,4 +1,4 @@
-import { getPostData } from '@/lib/posts'
+import { getPostData, getAdjacentPosts } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import PostContent from './PostContent'
 
@@ -12,7 +12,13 @@ export default async function Post({ params }: Props) {
   try {
     const resolvedParams = await params
     const post = await getPostData(resolvedParams.slug)
-    return <PostContent post={post} />
+    const adjacentPosts = await getAdjacentPosts(resolvedParams.slug)
+    
+    return <PostContent 
+      post={post} 
+      previousPost={adjacentPosts.previous}
+      nextPost={adjacentPosts.next}
+    />
   } catch (e) {
     notFound()
   }
