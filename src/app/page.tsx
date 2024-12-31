@@ -1,6 +1,11 @@
 import Link from 'next/link'
+import { getSortedPostsData } from '@/lib/posts'
+import PostCard from '@/components/PostCard'
 
 export default function Home() {
+  // 最新の記事を5件取得
+  const posts = getSortedPostsData().slice(0, 5)
+
   return (
     <div className="space-y-8">
       {/* ヒーローセクション */}
@@ -13,13 +18,19 @@ export default function Home() {
 
       {/* 最新の記事セクション */}
       <section>
-        <h2 className="text-2xl font-bold mb-6">最新の記事</h2>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">最新の記事</h2>
+          <Link 
+            href="/posts" 
+            className="text-blue-600 hover:text-blue-800"
+          >
+            すべての記事を見る →
+          </Link>
+        </div>
         <div className="grid gap-6">
-          {/* ここに後で記事一覧を表示します */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-xl font-semibold mb-2">サンプル記事</h3>
-            <p className="text-gray-600">この部分は後ほど実際の記事データで置き換えます。</p>
-          </div>
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
         </div>
       </section>
     </div>
