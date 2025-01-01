@@ -19,7 +19,7 @@ export default async function Post({ params }: Props) {
       previousPost={adjacentPosts.previous}
       nextPost={adjacentPosts.next}
     />
-  } catch (e) {
+  } catch {
     notFound()
   }
 }

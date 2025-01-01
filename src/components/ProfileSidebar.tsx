@@ -1,12 +1,16 @@
+import Image from 'next/image'
+
 export default function ProfileSidebar() {
   return (
     <aside className="w-[200px] shrink-0">
       <div className="bg-white rounded-lg shadow-sm p-4">
         {/* アイコンと名前 */}
         <div className="flex flex-col items-center mb-4">
-          <img
+          <Image
             src="/images/profile/avatar.jpeg"
             alt="pen2"
+            width={64}
+            height={64}
             className="w-16 h-16 rounded-full object-cover mb-2"
           />
           <div className="text-center">

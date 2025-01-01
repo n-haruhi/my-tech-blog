@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto">
@@ -5,9 +7,11 @@ export default function AboutPage() {
 
       {/* アイコンセクション */}
       <section className="flex flex-col items-center mb-8">
-        <img
+        <Image
           src="/images/profile/avatar.jpeg"
           alt="pen2"
+          width={128}
+          height={128}
           className="w-32 h-32 rounded-full object-cover mb-4"
         />
         <h1 className="text-gray-600 text-3xl font-bold">pen2</h1>
