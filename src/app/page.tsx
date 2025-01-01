@@ -10,8 +10,8 @@ export default function Home() {
     <div className="space-y-8">
       {/* ヒーローセクション */}
       <section className="text-center py-10">
-        <h1 className="text-4xl font-bold mb-4 text-gray-800">Tech Blog</h1>
-        <p className="text-xl text-gray-600 mb-8">
+        <h1 className="text-3xl font-bold mb-4 text-gray-800">Tech Blog</h1>
+        <p className="text-lg text-gray-600 mb-8">
           フロントエンド開発とシステム設計についての技術ブログ
         </p>
       </section>
