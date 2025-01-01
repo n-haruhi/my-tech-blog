@@ -49,7 +49,7 @@ export default function PostsList({ posts }: PostsListProps) {
   return (
     <div>
       {/* 検索バー */}
-      <div className="mb-8">
+      <div className="mb-8 relative z-10">
         <div className="relative">
           <input
             type="text"

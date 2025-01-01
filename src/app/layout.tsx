@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Link from 'next/link'
+import Header from '@/components/Header'
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tech Blog',
     description: 'フロントエンド開発とシステム設計についての技術ブログ',
-    url: 'https://your-domain.com', // あとでVercelのURLに更新
+    url: 'https://my-tech-blog-fxsn.vercel.app/', // あとでVercelのURLに更新
     siteName: 'Tech Blog',
     locale: 'ja_JP',
     type: 'website',
@@ -35,19 +36,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${inter.className} bg-[#efece7]`}>
         <div className="min-h-screen flex flex-col">
-          {/* ヘッダー */}
-          <header className="bg-[#fcfaf7] shadow-md">
-            <nav className="max-w-6xl mx-auto px-4 h-20">
-              <div className="flex justify-between items-center h-full">
-                <Link href="/" className="text-2xl font-bold text-[#000000] hover:text-[#555555]">pen2 Tech Blog</Link>
-                <div className="space-x-4">
-                  <Link href="/" className="text-[#000000] hover:text-[#555555]">Top</Link>
-                  <Link href="/posts" className="text-[#000000] hover:text-[#555555]">Articles</Link>
-                  <Link href="/about" className="text-[#000000] hover:text-[#555555]">Profile</Link>
-                </div>
-              </div>
-            </nav>
-          </header>
+          <Header />
 
           {/* メインコンテンツエリア */}
           <div className="flex-grow">
