@@ -12,8 +12,11 @@ export default function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([])
 
   useEffect(() => {
-    // 記事内のh1, h2, h3タグを取得
-    const elements = document.querySelectorAll('h1, h2, h3')
+    // 記事内のh1, h2, h3タグを取得（article要素内のみを対象にする）
+    const articleElement = document.querySelector('article')
+    if (!articleElement) return
+
+    const elements = articleElement.querySelectorAll('h1, h2, h3')
     const headingElements = Array.from(elements)
 
     // 見出し要素を配列に変換
@@ -39,17 +42,27 @@ export default function TableOfContents() {
   }
 
   return (
-    <nav className="bg-white rounded-lg p-4 shadow-sm mb-10">
-      <h2 className="text-lg font-semibold mb-3">目次</h2>
-      <ul className="space-y-2">
+    <nav className="bg-white rounded-lg p-4 shadow-sm">
+      <h2 className="text-lg font-semibold mb-3 text-gray-800">目次</h2>
+      <ul className="space-y-[2px] text-sm">
         {headings.map((heading) => (
           <li
             key={heading.id}
-            style={{ paddingLeft: `${(heading.level - 1) * 0.875}rem` }}
+            className={`
+              ${heading.level === 1 ? 'font-semibold text-gray-800' : ''}
+              ${heading.level === 2 ? 'pl-2 text-gray-700 flex items-center before:content-["•"] before:mr-2 before:text-gray-400' : ''}
+              ${heading.level === 3 ? 'pl-6 text-gray-600 flex items-center before:content-["•"] before:mr-2 before:text-gray-400' : ''}
+            `}
           >
             
-            <a href={`#${heading.id}`}
-              className="text-gray-600 hover:text-blue-600 hover:underline"
+            <a  href={`#${heading.id}`}
+              className="block py-[2px] hover:text-blue-600 transition-colors duration-200 leading-normal"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById(heading.id)?.scrollIntoView({
+                  behavior: 'smooth'
+                })
+              }}
             >
               {heading.text}
             </a>

@@ -36,26 +36,28 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col">
           {/* ヘッダー */}
           <header className="bg-[#fcfaf7] shadow-sm">
-            <nav className="max-w-4xl mx-auto px-4 py-4">
-              <div className="flex justify-between items-center">
-                <a href="/" className="text-xl font-bold text-[#000000] hover:text-[#555555]">pen2 Tech Blog</a>
+            <nav className="max-w-7xl mx-auto px-4 h-20">
+              <div className="flex justify-between items-center h-full">
+                <a href="/" className="text-2xl font-bold text-[#000000] hover:text-[#555555]">pen2 Tech Blog</a>
                 <div className="space-x-4">
-                  <a href="/posts" className="text-[#000000] hover:text-[#555555]">Article</a>
+                  <a href="/posts" className="text-[#000000] hover:text-[#555555]">Articles</a>
                   <a href="/about" className="text-[#000000] hover:text-[#555555]">Profile</a>
                 </div>
               </div>
             </nav>
           </header>
 
-          {/* メインコンテンツ */}
-          <main className="flex-grow max-w-4xl w-full mx-auto px-4 py-8">
-            {children}
-          </main>
+          {/* メインコンテンツエリア */}
+          <div className="flex-grow">
+            <main className="max-w-4xl w-full mx-auto px-4 py-8">
+              {children}
+            </main>
+          </div>
 
           {/* フッター */}
           <footer className="bg-[#ae8b69] border-t mt-auto">
-            <div className="max-w-4xl mx-auto px-4 py-6 text-center text-[#000000]">
-              <p>© {new Date().getFullYear()} Tech Blog. All rights reserved.</p>
+            <div className="max-w-4xl mx-auto px-4 py-6 text-center text-white">
+              <p>© {new Date().getFullYear()} pen2</p>
             </div>
           </footer>
         </div>

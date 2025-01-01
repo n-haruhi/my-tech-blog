@@ -3,9 +3,20 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">About Me</h1>
 
+      {/* アイコンセクション */}
+      <section className="flex flex-col items-center mb-8">
+        <img
+          src="/images/profile/avatar.jpeg"
+          alt="pen2"
+          className="w-32 h-32 rounded-full object-cover mb-4"
+        />
+        <h1 className="text-3xl font-bold">pen2</h1>
+        <p className="text-gray-600">Software Engineer</p>
+      </section>
+
       {/* プロフィールセクション */}
       <section className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-[#000000] text-2xl font-semibold mb-4">プロフィール</h2>
+        <h2 className="text-[#000000] text-2xl font-semibold mb-4">PROFILE</h2>
         <p className="text-gray-600 mb-4">
           2001年2月23日生まれ。<br />
           大学で4年間 心理学を学び、卒業後は児童福祉の現場で勤務する。<br />
@@ -15,17 +26,17 @@ export default function AboutPage() {
           現在ソフトウェアエンジニアとして勤務している。<br />
           <br />
           仕事終わりでも休日でも、Udemyや書籍を読み漁り、<br />
-          つくってみたい、試してみたいの調査や開発で時間を溶かしてしまう日々を送っている。<br />
+          つくってみたい、試してみたいの調査や開発で時間を溶かす日々を送っている。<br />
         </p>
       </section>
 
       {/* スキルセクション */}
       <section className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-[#000000] text-2xl font-semibold mb-4">スキル・技術スタック</h2>
+        <h2 className="text-[#000000] text-2xl font-semibold mb-4">SKILLS & TECH STACK</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* フロントエンド */}
           <div>
-            <h3 className="text-gray-600 text-lg font-medium mb-2">フロントエンド</h3>
+            <h3 className="text-gray-600 text-lg font-medium mb-2">Frontend</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>HTML/CSS</li>
               <li>JavaScript/TypeScript</li>
@@ -37,7 +48,7 @@ export default function AboutPage() {
 
           {/* バックエンド */}
           <div>
-            <h3 className="text-gray-600 text-lg font-medium mb-2">バックエンド</h3>
+            <h3 className="text-gray-600 text-lg font-medium mb-2">Backend</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>Node.js</li>
               <li>Ruby on Rails</li>
@@ -48,7 +59,7 @@ export default function AboutPage() {
 
           {/* データベース・インフラ */}
           <div>
-            <h3 className="text-gray-600 text-lg font-medium mb-2">データベース・インフラ</h3>
+            <h3 className="text-gray-600 text-lg font-medium mb-2">Database & Infrastructure</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>AWS</li>
               <li>Terraform</li>
@@ -59,7 +70,7 @@ export default function AboutPage() {
 
           {/* 開発ツール・その他 */}
           <div>
-            <h3 className="text-gray-600 text-lg font-medium mb-2">開発ツール・その他</h3>
+            <h3 className="text-gray-600 text-lg font-medium mb-2">Development Tools & Others</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>Git/GitHub</li>
               <li>Google Cloud Platform</li>
@@ -70,7 +81,7 @@ export default function AboutPage() {
 
       {/* 連絡先・SNSリンク */}
       <section className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-[#000000] text-2xl font-semibold mb-4">Contact & Links</h2>
+        <h2 className="text-[#000000] text-2xl font-semibold mb-4">CONTACT & LINKS</h2>
         <div className="space-y-2">
           {/* GitHubリンク */}
           <a 

@@ -64,7 +64,7 @@ export default function PostsList({ posts }: PostsListProps) {
 
       {/* タグフィルター */}
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4 text-gray-900">タグで絞り込む</h2>
+        <h2 className="text-lg font-semibold mb-4 text-gray-800">タグで絞り込む</h2>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedTag(null)}
@@ -93,14 +93,14 @@ export default function PostsList({ posts }: PostsListProps) {
       </div>
 
       {/* 記事一覧のヘッダー */}
-      <h1 className="text-3xl font-bold mb-8 text-gray-900">
+      <h1 className="text-3xl font-bold mb-8 text-gray-800">
         {selectedTag ? `${selectedTag}の記事一覧` : '全ての記事'}
         {searchQuery && ` - "${searchQuery}"の検索結果`}
         {filteredPosts.length > 0 && ` (${filteredPosts.length}件)`}
       </h1>
 
       {/* 記事一覧 */}
-      <div className="grid gap-6 mb-8 text-gray-900">
+      <div className="grid gap-6 mb-8 text-gray-800">
         {paginatedPosts.length > 0 ? (
           paginatedPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
@@ -118,7 +118,7 @@ export default function PostsList({ posts }: PostsListProps) {
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ChevronLeftIcon className="h-5 w-5" />
           </button>
@@ -129,8 +129,8 @@ export default function PostsList({ posts }: PostsListProps) {
               onClick={() => setCurrentPage(number)}
               className={`px-4 py-2 rounded-lg ${
                 currentPage === number
-                  ? 'bg-blue-600 text-white'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-[#393a3e] text-white'
+                  : 'text-gray-800 hover:bg-gray-200'
               }`}
             >
               {number}
@@ -140,7 +140,7 @@ export default function PostsList({ posts }: PostsListProps) {
           <button
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>

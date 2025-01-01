@@ -19,7 +19,7 @@ export default function PostCard({ post }: { post: Post }) {
                 key={tag}
                 className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full"
               >
-                {tag}
+                # {tag}
               </span>
             ))}
           </div>

@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <div className="space-y-8">
       {/* ヒーローセクション */}
-      <section className="text-center py-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">Tech Blog</h1>
-        <p className="text-xl text-gray-700 mb-8">
+      <section className="text-center py-10">
+        <h1 className="text-4xl font-bold mb-4 text-gray-800">Tech Blog</h1>
+        <p className="text-xl text-gray-600 mb-8">
           フロントエンド開発とシステム設計についての技術ブログ
         </p>
       </section>
@@ -19,10 +19,10 @@ export default function Home() {
       {/* 最新の記事セクション */}
       <section>
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">最新の記事</h2>
+          <h2 className="text-2xl font-bold text-gray-800">最新の記事</h2>
           <Link 
             href="/posts" 
-            className="text-blue-700 hover:text-blue-900"
+            className="text-[#b3906d] hover:text-black font-bold"
           >
             すべての記事を見る →
           </Link>
