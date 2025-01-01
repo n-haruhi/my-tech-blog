@@ -35,11 +35,12 @@ export default function RootLayout({
       <body className={`${inter.className} bg-[#efece7]`}>
         <div className="min-h-screen flex flex-col">
           {/* ヘッダー */}
-          <header className="bg-[#fcfaf7] shadow-sm">
-            <nav className="max-w-7xl mx-auto px-4 h-20">
+          <header className="bg-[#fcfaf7] shadow-md">
+            <nav className="max-w-6xl mx-auto px-4 h-20">
               <div className="flex justify-between items-center h-full">
                 <a href="/" className="text-2xl font-bold text-[#000000] hover:text-[#555555]">pen2 Tech Blog</a>
                 <div className="space-x-4">
+                  <a href="/" className="text-[#000000] hover:text-[#555555]">Top</a>
                   <a href="/posts" className="text-[#000000] hover:text-[#555555]">Articles</a>
                   <a href="/about" className="text-[#000000] hover:text-[#555555]">Profile</a>
                 </div>
