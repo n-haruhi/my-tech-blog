@@ -16,9 +16,10 @@ export default function Header() {
           </Link>
 
           {/* デスクトップメニュー */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-5">
             <Link href="/" className="text-[#000000] hover:text-[#555555]">Top</Link>
             <Link href="/posts" className="text-[#000000] hover:text-[#555555]">Articles</Link>
+            <Link href="/changelog" className="text-[#000000] hover:text-[#555555]">DevLog</Link>
             <Link href="/about" className="text-[#000000] hover:text-[#555555]">Profile</Link>
           </div>
 
@@ -63,6 +64,13 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
             >
               Articles
+            </Link>
+            <Link 
+              href="/changelog" 
+              className="text-[#000000] hover:text-[#555555] py-2 text-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              DevLog
             </Link>
             <Link 
               href="/about" 
