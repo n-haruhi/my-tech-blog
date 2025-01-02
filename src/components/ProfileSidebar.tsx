@@ -32,7 +32,7 @@ export default function ProfileSidebar() {
             </svg>
           </a>
           <a 
-            href="https://x.com/asobit0" 
+            href="https://x.com/n_haru2"
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600"
