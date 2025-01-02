@@ -12,8 +12,8 @@ type Props = {
 
 export default function PostContent({ post, previousPost, nextPost }: Props) {
   return (
-    <article className="prose prose-lg max-w-none">
-      <h1 className="text-3xl font-bold mb-4 text-center">{post.title}</h1>
+    <article className="prose prose-lg max-w-none px-4 md:px-0">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center">{post.title}</h1>
       <div className="mb-8">
         <div className="text-gray-500 mb-4 text-center text-sm">
           {`${new Date(post.date).toLocaleDateString('ja-JP')} 公開`}

@@ -1,50 +1,37 @@
 ---
-title: '技術ブログ記事サイト作成'
-date: '2024-12-30'
-tags: ['Next.js', 'ブログ']
-excerpt: 'Next.jsを使って技術ブログを作成する過程について書いていきます'
+title: 'Next.jsでの技術ブログ実装方法'
+date: '2025-01-01'
+tags: ['Next.js', 'React', '開発']
+excerpt: 'Next.jsを使用した技術ブログの実装方法について詳しく解説します'
 ---
 
-このブログサイトは Next.js で作成しています。
+Next.jsは技術ブログの構築に最適なフレームワークです。
 
-選定理由としては以下の点が挙げられます。
+### 選定理由
 - TypeScriptのサポート
 - ファイルベースのルーティング
 - 優れたパフォーマンス
-- 充実したエコシステム
 
-## 実装の過程
-実装の詳細については順次書いていきます...
+## 基本設定
+プロジェクトの基本設定について説明します。
 
-## 動作確認コードサンプル
-TypeScriptでのコンポーネント実装例：
+### 必要なパッケージ
+- next
+- react
+- typescript
+- tailwindcss
 
-```typescript
-import { useState } from 'react'
+### 初期構築
+プロジェクトの初期構築手順を説明します。
 
-function Counter() {
-  const [count, setCount] = useState(0)
+## 機能実装
+主な機能の実装方法について解説します。
 
-  return (
-    
-      Count: {count}
-      <button onClick={() => setCount(count + 1)}>
-        Increment
-      
-    
-  )
-}
-```
+### マークダウン対応
+マークダウンファイルの処理方法について。
 
-CSSの例：
-
-```css
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-```
+### シンタックスハイライト
+コードブロックの装飾について...
 
 ---
 

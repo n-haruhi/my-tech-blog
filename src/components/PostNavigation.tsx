@@ -24,7 +24,7 @@ export default function PostNavigation({ previous, next }: PostNavigationProps) 
                 <ChevronLeftIcon className="h-4 w-4 mr-1" />
                 前の記事
               </div>
-              <div className="text-lg font-medium truncate">
+              <div className="text-base font-medium truncate">
                 {previous.title}
               </div>
             </Link>
@@ -42,7 +42,7 @@ export default function PostNavigation({ previous, next }: PostNavigationProps) 
                 次の記事
                 <ChevronRightIcon className="h-4 w-4 ml-1" />
               </div>
-              <div className="text-lg font-medium truncate">
+              <div className="text-base font-medium truncate">
                 {next.title}
               </div>
             </Link>

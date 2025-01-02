@@ -1,28 +1,50 @@
 ---
-title: 'Next.jsで技術ブログをつくるための設定'
-date: '2024-12-31'
-tags: ['Next.js', 'TypeScript']
-excerpt: 'Next.jsで技術ブログをつくる際の初期設定と基本的な実装方法について解説します'
+title: '技術ブログ記事サイト作成'
+date: '2024-12-30'
+tags: ['Next.js', 'ブログ']
+excerpt: 'Next.jsを使って技術ブログを作成する過程について書いていきます'
 ---
 
-Next.jsは React ベースのフレームワークで、技術ブログの作成に適しています。
-この記事では、Next.jsを使用したプロジェクトの設定方法について説明します。
+このブログサイトは Next.js で作成しています。
 
-## プロジェクトの初期設定
-1. プロジェクトの作成
-2. 必要なパッケージのインストール
-3. ディレクトリ構造の設定
+選定理由としては以下の点が挙げられます。
+- TypeScriptのサポート
+- ファイルベースのルーティング
+- 優れたパフォーマンス
+- 充実したエコシステム
 
-## 主な機能の実装
-- マークダウンの処理
-- 記事一覧の表示
-- 個別記事ページの作成
+## 実装の過程
+実装の詳細については順次書いていきます...
 
-## 今後の展望
-さらに以下の機能を追加予定です。
-- タグによる記事の分類
-- 検索機能
-- SNSシェアボタン
+## 動作確認コードサンプル
+TypeScriptでのコンポーネント実装例：
+
+```typescript
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    
+      Count: {count}
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      
+    
+  )
+}
+```
+
+CSSの例：
+
+```css
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+```
 
 ---
 

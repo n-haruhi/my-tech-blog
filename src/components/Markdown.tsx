@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
-import 'highlight.js/styles/github-dark.css'  // 一旦ダークテーマ
+import 'highlight.js/styles/github-dark.css'
 
 export default function Markdown({ content }: { content: string }) {
   return (

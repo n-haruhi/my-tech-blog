@@ -114,20 +114,20 @@ export default function PostsList({ posts }: PostsListProps) {
 
       {/* ページネーション */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center space-x-2">
+        <div className="flex justify-center items-center space-x-1 md:space-x-2">
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <ChevronLeftIcon className="h-5 w-5" />
+            <ChevronLeftIcon className="h-4 w-4 md:h-5 md:w-5" />
           </button>
           
           {pageNumbers.map(number => (
             <button
               key={number}
               onClick={() => setCurrentPage(number)}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg ${
                 currentPage === number
                   ? 'bg-[#393a3e] text-white'
                   : 'text-gray-800 hover:bg-gray-200'
@@ -140,9 +140,9 @@ export default function PostsList({ posts }: PostsListProps) {
           <button
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded-lg text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <ChevronRightIcon className="h-5 w-5" />
+            <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5" />
           </button>
         </div>
       )}
