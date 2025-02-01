@@ -7,13 +7,13 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Tech Blog',
+    default: 'pen2 Tech Blog',
     template: '%s | Tech Blog'
   },
-  description: 'フロントエンド開発とシステム設計についての技術ブログ',
+  description: 'フロントエンド開発、React、TypeScript、Next.jsを中心とした技術情報とシステム設計のベストプラクティスを発信。エンジニアとしての学びや知見、開発プロセスでの気づきを共有する技術ブログ。',
   openGraph: {
     title: 'Tech Blog',
-    description: 'フロントエンド開発とシステム設計についての技術ブログ',
+    description: 'フロントエンド開発、React、TypeScript、Next.jsを中心とした技術情報とシステム設計のベストプラクティスを発信。エンジニアとしての学びや知見、開発プロセスでの気づきを共有する技術ブログ。',
     url: 'https://my-tech-blog-fxsn.vercel.app/', // あとでVercelのURLに更新
     siteName: 'Tech Blog',
     locale: 'ja_JP',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Tech Blog',
-    description: 'フロントエンド開発とシステム設計についての技術ブログ',
+    description: 'フロントエンド開発、React、TypeScript、Next.jsを中心とした技術情報とシステム設計のベストプラクティスを発信。エンジニアとしての学びや知見、開発プロセスでの気づきを共有する技術ブログ。',
   },
 }
 
