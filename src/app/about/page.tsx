@@ -44,6 +44,7 @@ export default function AboutPage() {
               <li>HTML/CSS</li>
               <li>JavaScript/TypeScript</li>
               <li>React</li>
+              <li>Tailwind CSS</li>
               <li>Vue.js</li>
               <li>Next.js</li>
             </ul>
@@ -65,6 +66,7 @@ export default function AboutPage() {
             <h3 className="text-gray-600 text-lg font-medium mb-2">Database & Infrastructure</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
               <li>AWS</li>
+              <li>Vercel</li>
               <li>Terraform</li>
               <li>Firebase</li>
               <li>DBeaver</li>
@@ -76,6 +78,7 @@ export default function AboutPage() {
             <h3 className="text-gray-600 text-lg font-medium mb-2">Development Tools & Others</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
               <li>Git/GitHub</li>
+              <li>WordPress</li>
               <li>Google Cloud Platform</li>
             </ul>
           </div>
