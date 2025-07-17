@@ -4,10 +4,9 @@ import type { Post } from '@/lib/posts'
 
 interface PostCardProps {
   post: Post
-  index?: number
 }
 
-export default function PostCard({ post, index = 0 }: PostCardProps) {
+export default function PostCard({ post }: PostCardProps) {
   return (
     <article className="bg-neon-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-neon-border">
       <Link href={`/posts/${post.slug}`}>
