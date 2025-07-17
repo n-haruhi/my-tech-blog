@@ -1,23 +1,34 @@
 import Link from 'next/link'
+import { formatDate } from '@/lib/utils'
 import type { Post } from '@/lib/posts'
 
-export default function PostCard({ post }: { post: Post }) {
+interface PostCardProps {
+  post: Post
+  index?: number
+}
+
+export default function PostCard({ post, index = 0 }: PostCardProps) {
   return (
-    <article className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+    <article className="bg-neon-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-neon-border">
       <Link href={`/posts/${post.slug}`}>
-        <div className="space-y-2">
-          <h2 className="text-xl font-semibold text-gray-600 hover:text-gray-800">
-            {post.title}
-          </h2>
-          <div className="text-sm text-gray-500">
-            {new Date(post.date).toLocaleDateString('ja-JP')}
+        <div className="space-y-3">
+          <div className="flex justify-between items-start">
+            <h2 className="text-xl font-semibold text-neon-text hover:text-neon-cyan transition-colors duration-300">
+              {post.title}
+            </h2>
           </div>
-          <p className="text-gray-600">{post.excerpt}</p>
+          
+          <div className="text-sm text-neon-muted">
+            {formatDate(post.date)}
+          </div>
+          
+          <p className="text-neon-muted leading-relaxed">{post.excerpt}</p>
+          
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full"
+                className="bg-neon-slate text-neon-cyan text-sm px-3 py-1 rounded-full border border-neon-border"
               >
                 # {tag}
               </span>

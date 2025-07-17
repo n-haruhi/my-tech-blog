@@ -1,7 +1,6 @@
 import { BellAlertIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-
 type ChangelogItem = {
   date: string
   title: string
@@ -48,40 +47,40 @@ export default function ChangelogPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex items-center gap-2 mb-8">
-        <BellAlertIcon className="h-6 w-6 md:h-7 md:w-7 text-gray-800" />
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Development Log</h1>
+        <BellAlertIcon className="h-6 w-6 md:h-7 md:w-7 text-neon-cyan" />
+        <h1 className="text-2xl md:text-3xl font-bold text-neon-text">Development Log</h1>
       </div>
       
       <div className="space-y-8">
         {changelog.map((item, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-sm p-6">
+          <div key={index} className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-6">
             <div className="flex items-start justify-between mb-2">
-              <h2 className="text-gray-600 text-xl font-semibold">{item.title}</h2>
-              <div className="text-sm text-gray-500">{item.date}</div>
+              <h2 className="text-neon-text text-xl font-semibold">{item.title}</h2>
+              <div className="text-sm text-neon-muted">{item.date}</div>
             </div>
             
             <div className="mb-3">
               <span className={`inline-block px-2 py-1 text-sm rounded-full ${
-                item.category === 'feature' ? 'bg-blue-100 text-blue-800' :
-                item.category === 'improvement' ? 'bg-green-100 text-green-800' :
-                item.category === 'fix' ? 'bg-yellow-100 text-yellow-800' :
-                'bg-purple-100 text-purple-800'
+                item.category === 'feature' ? 'bg-neon-blue/20 text-neon-cyan border border-neon-blue/30' :
+                item.category === 'improvement' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                item.category === 'fix' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                'bg-purple-500/20 text-purple-400 border border-purple-500/30'
               }`}>
                 {item.category === 'feature' ? '新機能' :
-                 item.category === 'improvement' ? '改善' :
-                 item.category === 'fix' ? 'バグ修正' :
-                 'リリース'}
+                  item.category === 'improvement' ? '改善' :
+                  item.category === 'fix' ? 'バグ修正' :
+                  'リリース'}
               </span>
             </div>
             
-            <p className="text-gray-600 mb-4">{item.description}</p>
+            <p className="text-neon-muted mb-4 leading-relaxed">{item.description}</p>
             
             {item.relatedPost && (
               <div className="text-sm">
-                <span className="text-gray-500">関連記事: </span>
+                <span className="text-neon-muted">関連記事: </span>
                 <Link 
                   href={`/posts/${item.relatedPost.slug}`}
-                  className="text-blue-600 hover:underline"
+                  className="text-neon-cyan hover:text-neon-blue transition-colors duration-300"
                 >
                   {item.relatedPost.title}
                 </Link>
