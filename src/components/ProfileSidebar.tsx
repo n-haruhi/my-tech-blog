@@ -7,7 +7,7 @@ export default function ProfileSidebar() {
         {/* アイコンと名前 */}
         <div className="flex flex-col items-center mb-4">
           <Image
-            src="/images/profile/avatar.jpeg"
+            src="/images/profile/avatar2.jpg"
             alt="pen2"
             width={64}
             height={64}
@@ -42,7 +42,7 @@ export default function ProfileSidebar() {
             </svg>
           </a>
           <a 
-            href="https://bsky.app/profile/shaka7.bsky.social" 
+            href="https://bsky.app/profile/nhr2.bsky.social" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center text-gray-600 hover:text-blue-600"
