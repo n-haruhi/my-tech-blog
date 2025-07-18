@@ -14,9 +14,15 @@ type ChangelogItem = {
 
 const changelog: ChangelogItem[] = [
   {
+    date: '2025-07-17',
+    title: 'ネオンカラーテーマの適用',
+    description: 'サイト全体のデザインをダークテーマのネオンカラーに変更。記事ページ、ヘッダー、各カード、ナビゲーションなど全コンポーネントのカラーパレットを統一し、よりモダンで少しサイバー味あるデザインに改良しました。',
+    category: 'improvement'
+  },
+  {
     date: '2025-01-03',
     title: 'Development Logページの追加',
-    description: 'サイトの開発過程や更新内容を時系列で確認できるDevelopment Logページを追加。新機能の実装や改善点、リリース情報などの開発履歴を今後も記録していきます。',
+    description: 'サイトの開発過程や更新内容を時系列で確認できる Development Log ページを追加。新機能や改善点、リリース情報などの開発履歴を記録していきます。',
     category: 'feature'
   },
   {
@@ -28,12 +34,8 @@ const changelog: ChangelogItem[] = [
   {
     date: '2025-01-01',
     title: 'サイト公開 (v1.0.0)',
-    description: 'Next.js, TypeScript, Tailwind CSSを使用した技術ブログを公開。記事の検索機能、タグフィルタリング、ページネーション、マークダウンによる記事管理などの基本機能を実装しました。',
-    category: 'release',
-    // relatedPost: {
-    //   slug: 'twenty-first-post',
-    //   title: 'Next.jsでブログを作る方法'
-    // }
+    description: 'これまで別サイトに投稿していた記事を移行して公開。記事検索機能、タグフィルタリング、ページネーション、マークダウンによる記事管理などの基本機能を実装しました。',
+    category: 'release'
   },
   {
     date: '2024-12-31',
