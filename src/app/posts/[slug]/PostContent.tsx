@@ -1,8 +1,7 @@
-'use client'
-
-import Markdown from '@/components/Markdown'
-import PostNavigation from '@/components/PostNavigation'
-import type { Post } from '@/lib/posts'
+"use client"
+import Markdown from "@/components/Markdown"
+import PostNavigation from "@/components/PostNavigation"
+import type { Post } from "@/lib/posts"
 
 type Props = {
   post: Post
@@ -12,25 +11,24 @@ type Props = {
 
 export default function PostContent({ post, previousPost, nextPost }: Props) {
   return (
-    <article className="prose prose-lg max-w-none px-4 md:px-0">
-      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center">{post.title}</h1>
+    <article className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-6 md:p-8">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center text-neon-text">{post.title}</h1>
       <div className="mb-8">
-        <div className="text-gray-500 mb-4 text-center text-sm">
-          {`${new Date(post.date).toLocaleDateString('ja-JP')} 公開`}
+        <div className="text-neon-muted mb-4 text-center text-sm">
+          {`${new Date(post.date).toLocaleDateString("ja-JP")} 公開`}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full"
+              className="bg-neon-slate text-neon-cyan text-sm px-3 py-1 rounded-full border border-neon-border/50"
             >
               # {tag}
             </span>
           ))}
         </div>
       </div>
-
-      <div className="prose prose-blue">
+      <div className="prose prose-lg max-w-none">
         <Markdown content={post.content} />
       </div>
 
