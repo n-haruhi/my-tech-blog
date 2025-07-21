@@ -42,28 +42,28 @@ export default function PostsList({ posts }: PostsListProps) {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (
-    <div>
+    <div className="px-4 sm:px-6 lg:px-0">
       {/* 検索バー */}
-      <div className="mb-8 relative z-10">
+      <div className="mb-6 sm:mb-8 relative z-10">
         <div className="relative">
           <input
             type="text"
             placeholder="記事を検索..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 pl-10 bg-neon-card border border-neon-border rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan text-neon-text placeholder-neon-muted"
+            className="w-full px-4 py-2 sm:py-3 pl-10 sm:pl-12 bg-neon-card border border-neon-border rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan text-neon-text placeholder-neon-muted text-sm sm:text-base"
           />
-          <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-neon-muted" />
+          <MagnifyingGlassIcon className="absolute left-3 sm:left-4 top-2.5 sm:top-3.5 h-4 w-4 sm:h-5 sm:w-5 text-neon-muted" />
         </div>
       </div>
 
       {/* タグフィルター */}
-      <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4 text-neon-text">タグで絞り込む</h2>
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-neon-text">タグで絞り込む</h2>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedTag(null)}
-            className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 ${
+            className={`px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm transition-colors duration-300 ${
               selectedTag === null
                 ? "bg-neon-cyan text-neon-dark"
                 : "bg-neon-slate text-neon-text hover:bg-neon-card border border-neon-border"
@@ -75,7 +75,7 @@ export default function PostsList({ posts }: PostsListProps) {
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 ${
+              className={`px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm transition-colors duration-300 ${
                 selectedTag === tag
                   ? "bg-neon-cyan text-neon-dark"
                   : "bg-neon-slate text-neon-text hover:bg-neon-card border border-neon-border"
@@ -88,37 +88,37 @@ export default function PostsList({ posts }: PostsListProps) {
       </div>
 
       {/* 記事一覧のヘッダー */}
-      <h1 className="text-2xl font-bold mb-8 text-neon-text">
+      <h1 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-neon-text">
         {selectedTag ? `${selectedTag}の記事一覧` : "全ての記事"}
         {searchQuery && ` - "${searchQuery}"の検索結果`}
         {filteredPosts.length > 0 && ` (${filteredPosts.length}件)`}
       </h1>
 
       {/* 記事一覧 */}
-      <div className="grid gap-6 mb-8">
+      <div className="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
         {paginatedPosts.length > 0 ? (
           paginatedPosts.map((post) => <PostCard key={post.slug} post={post} />)
         ) : (
-          <p className="text-neon-muted text-center py-8">該当する記事が見つかりませんでした。</p>
+          <p className="text-neon-muted text-center py-8 text-sm sm:text-base">該当する記事が見つかりませんでした。</p>
         )}
       </div>
 
       {/* ページネーション */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center space-x-1 md:space-x-2">
+        <div className="flex justify-center items-center space-x-1 sm:space-x-2">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="p-1 md:p-2 rounded-lg text-neon-text hover:bg-neon-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            className="p-1.5 sm:p-2 rounded-lg text-neon-text hover:bg-neon-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
           >
-            <ChevronLeftIcon className="h-4 w-4 md:h-5 md:w-5" />
+            <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
 
           {pageNumbers.map((number) => (
             <button
               key={number}
               onClick={() => setCurrentPage(number)}
-              className={`px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg transition-colors duration-300 ${
+              className={`px-2.5 py-1 sm:px-4 sm:py-2 text-xs sm:text-base rounded-lg transition-colors duration-300 ${
                 currentPage === number ? "bg-neon-cyan text-neon-dark" : "text-neon-text hover:bg-neon-card"
               }`}
             >
@@ -129,9 +129,9 @@ export default function PostsList({ posts }: PostsListProps) {
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="p-1 md:p-2 rounded-lg text-neon-text hover:bg-neon-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            className="p-1.5 sm:p-2 rounded-lg text-neon-text hover:bg-neon-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
           >
-            <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5" />
+            <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
         </div>
       )}
