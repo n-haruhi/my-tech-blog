@@ -1,56 +1,53 @@
 # Tech Blog
-Next.jsで構築した技術ブログプラットフォームです。エンジニアリングに関する知見や技術的な学びを記録するために作成しました。
 
-## 機能
-- マークダウンによる記事管理
-- タグベースの記事分類
+個人の技術ブログサイトです。Next.js + TypeScript で構築し、エンジニアリングに関する学びや知見を記録します。
+
+## サイト URL
+https://pen2-tech-blog.vercel.app/
+
+## 主な機能
+- マークダウンベースの記事投稿
+- 管理画面による記事編集
+- タグ・検索機能
 - レスポンシブデザイン
 - シンタックスハイライト
-- SEO対策
 
-## 技術スタック
-- [Next.js](https://nextjs.org/) - Reactフレームワーク
-- [TypeScript](https://www.typescriptlang.org/) - 型安全な開発
-- [Tailwind CSS](https://tailwindcss.com/) - スタイリング
-- MDX - マークダウン拡張
-- [date-fns](https://date-fns.org/) - 日付操作
+## 技術構成
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS
+- **Authentication**: JWT (Jose)
+- **Deployment**: Vercel
+- **Content**: File-based Markdown
 
-## 開発環境のセットアップ
+## ローカル開発
+
 ```bash
-# リポジトリのクローン
+# リポジトリクローン
 git clone https://github.com/n-haruhi/my-tech-blog.git
 cd my-tech-blog
 
-# 依存パッケージのインストール
+# パッケージインストール
 npm install
 
-# 開発サーバーの起動
+# 環境変数設定
+cp .env.local.example .env.local
+
+# 開発サーバー起動
 npm run dev
 ```
 
-サーバー起動後、[http://localhost:3000](http://localhost:3000)にアクセスすることで確認できます。
+管理画面: http://localhost:3000/admin
 
-## 記事の追加方法
-1. `src/posts` ディレクトリに新しいMDXファイルを作成
-2. フロントマターに必要な情報を記載
-```markdown
----
-title: '記事タイトル'
-date: '2024-12-31'
-tags: ['Next.js', 'React']
-excerpt: '記事の概要'
----
+## プロジェクト構造
 ```
-3. マークダウン形式で本文を記述
-
-## デプロイ
-Vercelプラットフォームでのデプロイをおすすめします。
-1. [Vercel](https://vercel.com)でアカウント作成
-2. このリポジトリを連携
-3. デプロイ設定を確認して実行
+src/
+├── app/                 # Next.js App Router
+│   ├── (admin)/        # 管理画面
+│   ├── (main)/         # 公開サイト
+│   └── api/            # API Routes
+├── components/         # 共通コンポーネント
+├── lib/               # ユーティリティ
+└── posts/             # 記事ファイル (Markdown)
+```
 
 ## ライセンス
 MIT
-
-## 作者
-[n-haruhi](https://github.com/n-haruhi)
