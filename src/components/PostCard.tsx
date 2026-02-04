@@ -8,7 +8,7 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <article className="bg-neon-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-neon-border">
+    <article className="bg-neon-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-neon-border hover:border-neon-cyan">
       <Link href={`/posts/${post.slug}`}>
         <div className="space-y-3">
           <div className="flex justify-between items-start">

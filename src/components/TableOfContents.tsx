@@ -55,54 +55,60 @@ export default function TableOfContents({ onItemClick, collapsible, isOpen, onTo
   }
 
   return (
-    <nav className="bg-neon-card rounded-lg shadow-lg border border-neon-border w-full">
+    <nav className="bg-neon-card rounded-lg border border-neon-border w-full hover:border-neon-cyan transition-colors duration-300">
       {collapsible ? (
         <button
           onClick={onToggle}
-          className="w-full p-3 sm:p-4 text-left flex items-center justify-between hover:bg-neon-slate transition-colors"
+          className="w-full p-4 text-left flex items-center justify-between hover:bg-neon-slate/50 transition-colors rounded-t-lg"
         >
-          <h2 className="text-base sm:text-lg font-semibold text-neon-text">目次</h2>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-center gap-3">
+            <div className="w-1 h-5 bg-neon-cyan"></div>
+            <h2 className="text-lg font-semibold text-neon-text">目次</h2>
+          </div>
+          <svg className={`w-5 h-5 text-neon-cyan transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </button>
       ) : (
-        <div className="p-3 sm:p-4 pb-0">
-          <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-neon-text">目次</h2>
+        <div className="p-4 pb-0">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-1 h-5 bg-neon-cyan"></div>
+            <h2 className="text-lg font-semibold text-neon-text">目次</h2>
+          </div>
         </div>
       )}
       
       {(!collapsible || isOpen) && (
-        <div className="p-3 sm:p-4 pt-0">
-          <ul className="space-y-0.5 text-xs sm:text-sm">
-        {headings.map((heading) => (
-          <li
-            key={heading.id}
-            className={`
-              ${heading.level === 1 ? "font-semibold text-neon-text" : ""}
-              ${
-                heading.level === 2
-                  ? "pl-2 sm:pl-3 text-neon-muted flex items-start before:content-['•'] before:mr-1.5 sm:before:mr-2 before:text-neon-cyan before:flex-shrink-0 before:mt-0.5"
-                  : ""
-              }
-              ${
-                heading.level === 3
-                  ? "pl-4 sm:pl-6 text-neon-muted flex items-start before:content-['•'] before:mr-1.5 sm:before:mr-2 before:text-neon-cyan before:flex-shrink-0 before:mt-0.5"
-                  : ""
-              }
-            `}
-          >
-            <button
-              className="text-left py-0.5 hover:text-neon-cyan transition-colors duration-200 leading-tight w-full"
-              onClick={(e) => {
-                e.preventDefault()
-                handleClick(heading.id)
-              }}
-            >
-              {heading.text}
-            </button>
-          </li>
-        ))}
+        <div className="p-4 pt-0">
+          <ul className="space-y-1 text-sm">
+            {headings.map((heading) => (
+              <li
+                key={heading.id}
+                className={`
+                  ${heading.level === 1 ? "font-semibold text-neon-text" : ""}
+                  ${
+                    heading.level === 2
+                      ? "pl-3 text-neon-muted flex items-start before:content-['•'] before:mr-2 before:text-neon-cyan before:flex-shrink-0 before:mt-0.5"
+                      : ""
+                  }
+                  ${
+                    heading.level === 3
+                      ? "pl-6 text-neon-muted flex items-start before:content-['•'] before:mr-2 before:text-neon-cyan before:flex-shrink-0 before:mt-0.5"
+                      : ""
+                  }
+                `}
+              >
+                <button
+                  className="text-left py-1 hover:text-neon-cyan transition-colors duration-200 leading-relaxed w-full"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleClick(heading.id)
+                  }}
+                >
+                  {heading.text}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       )}

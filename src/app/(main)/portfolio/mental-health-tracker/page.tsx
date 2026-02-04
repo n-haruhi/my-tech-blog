@@ -4,9 +4,9 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
 
 export default function MentalHealthTrackerPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* パンくずリスト */}
-      <div className="mb-6 text-sm text-neon-muted">
+      <div className="mb-8 text-sm text-neon-muted">
         <Link href="/portfolio" className="hover:text-neon-cyan transition-colors duration-300">
           Portfolio
         </Link>
@@ -15,16 +15,19 @@ export default function MentalHealthTrackerPage() {
       </div>
 
       {/* プロジェクトタイトル */}
-      <div className="mb-8">
-        <h1 className="text-neon-text text-2xl sm:text-3xl font-bold mb-4">Mental Health Tracker</h1>
-        <p className="text-neon-muted text-base sm:text-lg">
+      <div className="mb-12">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-1 h-8 bg-neon-cyan"></div>
+          <h1 className="text-neon-text text-2xl sm:text-3xl font-bold">Mental Health Tracker</h1>
+        </div>
+        <p className="text-neon-muted text-lg">
           日々のメンタルヘルスを記録し、セルフケアをサポートするWebアプリケーション
         </p>
         <div className="flex flex-wrap gap-2 mt-4">
           {['Laravel', 'PHP', 'PostgreSQL', 'Tailwind CSS', 'Alpine.js', 'Chart.js'].map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-sm bg-neon-blue/20 text-neon-cyan border border-neon-blue/30 rounded-full"
+              className="px-3 py-1 text-sm bg-neon-slate text-neon-text border border-neon-border rounded-full"
             >
               {tag}
             </span>
@@ -33,21 +36,24 @@ export default function MentalHealthTrackerPage() {
       </div>
 
       {/* リンク */}
-      <div className="mb-8">
+      <div className="mb-12">
         <a
           href="https://mental-health-tracker.up.railway.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-6 py-3 bg-neon-cyan/20 hover:bg-neon-cyan/30 text-neon-cyan border border-neon-cyan rounded-lg transition-colors duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-slate-900 rounded-md font-medium transition-all duration-300"
         >
-          見に行く
+          <span>見に行く</span>
           <ChevronRightIcon className="w-5 h-5" />
         </a>
       </div>
 
       {/* スクリーンショット */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">実際の画面の様子</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">実際の画面の様子</h2>
+        </div>
         <div className="space-y-6">
           <div>
             <h3 className="text-neon-cyan text-lg mb-2">ダッシュボード</h3>
@@ -75,8 +81,11 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* プロジェクト概要 */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">プロジェクト概要</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">プロジェクト概要</h2>
+        </div>
         <p className="text-neon-muted leading-relaxed">
           日々の気分、睡眠時間、服薬状況などを記録し、必要に応じて認知行動療法の手法を用いて思考を整理することができます。
           自己管理とメンタルヘルスケアをサポートするツールです。<br />
@@ -85,8 +94,11 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* 主な機能 */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">主な機能</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">主な機能</h2>
+        </div>
         
         <div className="space-y-6">
           {/* ダッシュボード */}
@@ -191,8 +203,11 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* 使用技術 */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">使用技術</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">使用技術</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-neon-cyan text-lg font-medium mb-2">バックエンド</h3>
@@ -224,8 +239,11 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* 工夫した点 */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">工夫した点</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">工夫した点</h2>
+        </div>
         <div className="space-y-4">
           <div>
             <h3 className="text-neon-cyan text-lg font-medium mb-2">1. 継続しやすいUI設計</h3>
@@ -259,8 +277,11 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* 開発の背景 */}
-      <section className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 mb-8">
-        <h2 className="text-neon-text text-xl font-semibold mb-4">開発の背景</h2>
+      <section className="bg-neon-card rounded-lg border border-neon-border p-6 mb-8 hover:border-neon-cyan transition-colors duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-1 h-6 bg-neon-cyan"></div>
+          <h2 className="text-neon-text text-xl font-semibold">開発の背景</h2>
+        </div>
         <p className="text-neon-muted leading-relaxed mb-3">
           これまで学んできた心理学や福祉の視点、自身の経験などを生かして、
           身近な人たちのセルフケアをサポートできるツールを作りたいと考え、開発しました。
@@ -272,13 +293,13 @@ export default function MentalHealthTrackerPage() {
       </section>
 
       {/* 戻るリンク */}
-      <div className="mt-8">
+      <div className="mt-12">
         <Link
           href="/portfolio"
-          className="inline-flex items-center gap-1 text-neon-cyan hover:text-neon-blue transition-colors duration-300"
+          className="inline-flex items-center gap-2 text-neon-cyan hover:text-neon-blue transition-colors duration-300 font-medium"
         >
           <ChevronLeftIcon className="w-5 h-5" />
-          ポートフォリオ一覧に戻る
+          <span>ポートフォリオ一覧に戻る</span>
         </Link>
       </div>
     </div>

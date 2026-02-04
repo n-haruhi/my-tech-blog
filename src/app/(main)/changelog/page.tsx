@@ -59,22 +59,31 @@ const changelog: ChangelogItem[] = [
 
 export default function ChangelogPage() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="flex items-center gap-2 mb-8">
-        <BellAlertIcon className="h-6 w-6 md:h-7 md:w-7 text-neon-cyan" />
-        <h1 className="text-2xl md:text-3xl font-bold text-neon-text">Development Log</h1>
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* ページヘッダー */}
+      <div className="flex items-center gap-3 mb-12">
+        <BellAlertIcon className="h-7 w-7 text-neon-cyan animate-bell-ring" />
+        <h1 className="text-2xl sm:text-3xl font-bold text-neon-text">Development Log</h1>
       </div>
       
-      <div className="space-y-8">
+      {/* タイムライン */}
+      <div className="space-y-6">
         {changelog.map((item, index) => (
-          <div key={index} className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-6">
-            <div className="flex items-start justify-between mb-2">
+          <article 
+            key={index} 
+            className="bg-neon-card rounded-lg border border-neon-border p-6 hover:border-neon-cyan transition-colors duration-300"
+          >
+            {/* タイトルと日付 */}
+            <div className="flex items-start justify-between gap-4 mb-3">
               <h2 className="text-neon-text text-xl font-semibold">{item.title}</h2>
-              <div className="text-sm text-neon-muted">{item.date}</div>
+              <time className="text-sm text-neon-muted whitespace-nowrap px-3 py-1 bg-neon-slate rounded-md">
+                {item.date}
+              </time>
             </div>
             
-            <div className="mb-3">
-              <span className={`inline-block px-2 py-1 text-sm rounded-full ${
+            {/* カテゴリバッジ */}
+            <div className="mb-4">
+              <span className={`inline-block px-3 py-1 text-sm rounded-full font-medium ${
                 item.category === 'feature' ? 'bg-neon-blue/20 text-neon-cyan border border-neon-blue/30' :
                 item.category === 'improvement' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
                 item.category === 'fix' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
@@ -87,20 +96,22 @@ export default function ChangelogPage() {
               </span>
             </div>
             
-            <p className="text-neon-muted mb-4 leading-relaxed">{item.description}</p>
+            {/* 説明 */}
+            <p className="text-neon-muted leading-relaxed mb-4">{item.description}</p>
             
+            {/* 関連記事リンク */}
             {item.relatedPost && (
-              <div className="text-sm">
+              <div className="text-sm pt-4 border-t border-neon-border">
                 <span className="text-neon-muted">関連記事: </span>
                 <Link 
                   href={`/posts/${item.relatedPost.slug}`}
-                  className="text-neon-cyan hover:text-neon-blue transition-colors duration-300"
+                  className="text-neon-cyan hover:text-neon-blue transition-colors duration-300 font-medium"
                 >
-                  {item.relatedPost.title}
+                  {item.relatedPost.title} →
                 </Link>
               </div>
             )}
-          </div>
+          </article>
         ))}
       </div>
     </div>

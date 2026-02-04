@@ -11,24 +11,27 @@ type Props = {
 
 export default function PostContent({ post, previousPost, nextPost }: Props) {
   return (
-    <article className="bg-neon-card rounded-lg shadow-lg border border-neon-border p-4 sm:p-6 lg:p-8">
+    <article className="bg-neon-card rounded-lg border border-neon-border p-6 lg:p-8 hover:border-neon-cyan transition-colors duration-300">
       {/* タイトル */}
-      <header className="mb-6 sm:mb-8">
-        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-center text-neon-text leading-tight">
-          {post.title}
-        </h1>
+      <header className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-1 h-8 bg-neon-cyan"></div>
+          <h1 className="text-2xl lg:text-3xl font-bold text-neon-text leading-tight">
+            {post.title}
+          </h1>
+        </div>
         
         {/* 公開日 */}
-        <div className="text-neon-muted mb-4 text-center text-xs sm:text-sm">
+        <div className="text-neon-muted mb-4 text-sm">
           {`${new Date(post.date).toLocaleDateString("ja-JP")} 公開`}
         </div>
         
         {/* タグ */}
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center">
+        <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="bg-neon-slate text-neon-cyan text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full border border-neon-border/50"
+              className="px-3 py-1 text-sm bg-neon-slate text-neon-text border border-neon-border rounded-full"
             >
               # {tag}
             </span>
@@ -37,16 +40,14 @@ export default function PostContent({ post, previousPost, nextPost }: Props) {
       </header>
 
       {/* メインコンテンツ */}
-      <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-invert">
+      <div className="prose prose-base lg:prose-lg max-w-none prose-invert mb-12">
         <div className="text-neon-text leading-relaxed">
           <Markdown content={post.content} />
         </div>
       </div>
 
       {/* ナビゲーション */}
-      <div className="mt-8 sm:mt-12">
-        <PostNavigation previous={previousPost} next={nextPost} />
-      </div>
+      <PostNavigation previous={previousPost} next={nextPost} />
     </article>
   )
 }

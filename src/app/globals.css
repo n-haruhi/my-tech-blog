@@ -39,3 +39,24 @@ body {
     0 0 20px #6d28d9,
     0 0 30px #5b21b6;
 }
+
+/* ベルを揺らすアニメーション */
+@keyframes bell-ring {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(-10deg);
+  }
+  20%, 40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-bell-ring {
+  animation: bell-ring 2s ease-in-out infinite;
+  transform-origin: top center;
+}

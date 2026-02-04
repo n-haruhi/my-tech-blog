@@ -12,9 +12,9 @@ export default function PostLayout({
 
   return (
     <div className="fixed inset-0 top-16 sm:top-20 bg-neon-dark overflow-y-auto">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6 min-h-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 min-h-full">
         {/* タブレット・モバイル用目次 */}
-        <div className="lg:hidden mb-4 pt-4">
+        <div className="lg:hidden mb-4 pt-16">
           <TableOfContents 
             onItemClick={() => setShowToc(false)} 
             collapsible={true}
@@ -23,7 +23,7 @@ export default function PostLayout({
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 py-4 lg:py-6">
+        <div className="flex flex-col lg:flex-row gap-6 py-8">
           {/* 左サイドバー (目次) - デスクトップのみ */}
           <aside className="hidden lg:block lg:w-64">
             <div className="sticky top-4">
