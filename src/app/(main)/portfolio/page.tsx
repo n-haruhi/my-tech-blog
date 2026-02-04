@@ -9,11 +9,23 @@ type Project = {
   thumbnail: string
   tags: string[]
   demoUrl?: string
+  demoUrlLabel?: string
   startDate: string
   endDate?: string
 }
 
 const projects: Project[] = [
+  {
+    slug: 'tech-blog',
+    title: 'Tech Blog',
+    description: 'Next.js + TypeScriptで構築した個人技術ブログ。マークダウンベースの記事管理と管理画面を実装',
+    thumbnail: '/images/portfolio/tech-blog-thumbnail.png',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'JWT', 'Markdown'],
+    demoUrl: 'https://pen2-tech-blog.vercel.app/posts',
+    demoUrlLabel: '記事を読む',
+    startDate: '2024-12',
+    endDate: '2025-02'
+  },
   {
     slug: 'mental-health-tracker',
     title: 'Mental Health Tracker',
@@ -96,7 +108,7 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-2.5 bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-slate-900 rounded-md font-medium transition-all duration-300"
                 >
-                  <span>見に行く</span>
+                  <span>{project.demoUrlLabel || '見に行く'}</span>
                   <ArrowTopRightOnSquareIcon className="w-5 h-5" />
                 </a>
               )}
