@@ -81,9 +81,9 @@ export default function TableOfContents({ onItemClick, collapsible, isOpen, onTo
       {(!collapsible || isOpen) && (
         <div className="p-4 pt-0">
           <ul className="space-y-1 text-sm">
-            {headings.map((heading) => (
+            {headings.map((heading, index) => (
               <li
-                key={heading.id}
+                key={`${heading.id}-${index}`}
                 className={`
                   ${heading.level === 1 ? "font-semibold text-neon-text" : ""}
                   ${
