@@ -57,6 +57,7 @@ export default function AboutPage() {
             <ul className="list-disc list-inside text-neon-muted space-y-1 text-sm sm:text-base ml-2 sm:ml-4">
               <li>Node.js</li>
               <li>Ruby on Rails</li>
+              <li>Laravel</li>
               <li>PHP</li>
               <li>Python</li>
             </ul>

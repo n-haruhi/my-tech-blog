@@ -14,6 +14,12 @@ type ChangelogItem = {
 
 const changelog: ChangelogItem[] = [
   {
+    date: '2026-02-04',
+    title: 'ポートフォリオページの追加',
+    description: '制作したプロジェクトを紹介するポートフォリオページを新設。プロジェクト一覧と個別詳細ページを実装し、Mental Health Trackerを最初のプロジェクトとして掲載しました。',
+    category: 'feature'
+  },
+  {
     date: '2025-07-22',
     title: '管理画面機能の実装',
     description: 'ブラウザ上で記事が管理できるように管理画面を実装。JWT認証、記事のCRUD操作（作成・編集・削除）、レスポンシブ対応のマークダウンエディタを追加。これまでVSCodeを開いて記事の移行など行っていたのを今後はブラウザからサイトを開き直接記事を投稿・編集できるようになりました。',

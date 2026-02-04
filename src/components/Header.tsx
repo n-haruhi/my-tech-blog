@@ -23,6 +23,9 @@ export default function Header() {
           <Link href="/posts" className="text-neon-text hover:text-neon-cyan transition-colors duration-300">
             Articles
           </Link>
+          <Link href="/portfolio" className="text-neon-text hover:text-neon-cyan transition-colors duration-300">
+            Portfolio
+          </Link>
           <Link href="/changelog" className="text-neon-text hover:text-neon-cyan transition-colors duration-300">
             DevLog
           </Link>
@@ -78,6 +81,13 @@ export default function Header() {
             onClick={() => setIsOpen(false)}
           >
             Articles
+          </Link>
+          <Link
+            href="/portfolio"
+            className="text-neon-text hover:text-neon-cyan py-2 text-lg transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Portfolio
           </Link>
           <Link
             href="/changelog"

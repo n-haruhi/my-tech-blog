@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { getSortedPostsData } from "@/lib/posts"
 import PostCard from "@/components/PostCard"
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
   // 最新の記事を5件取得
@@ -22,9 +23,10 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold text-neon-text">最新の記事</h2>
           <Link
             href="/posts"
-            className="text-neon-cyan hover:text-neon-blue font-bold transition-colors duration-300 text-sm sm:text-base"
+            className="flex items-center gap-2 text-neon-cyan hover:text-neon-blue font-bold transition-colors duration-300 text-sm sm:text-base"
           >
-            すべての記事を見る →
+            <EllipsisHorizontalIcon className="w-5 h-5" />
+            すべての記事を見る
           </Link>
         </div>
         <div className="grid gap-6">
