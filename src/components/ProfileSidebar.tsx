@@ -11,7 +11,7 @@ export default function ProfileSidebar({ alignLeft = false }: ProfileSidebarProp
         {/* アイコンと名前 */}
         <div className={`flex flex-col ${alignLeft ? 'items-start' : 'items-center'} mb-3 sm:mb-4`}>
           <Image
-            src="/images/profile/avatar2.jpg"
+            src="/images/profile/avatar3.jpg"
             alt="pen2"
             width={64}
             height={64}

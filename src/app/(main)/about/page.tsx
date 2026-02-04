@@ -7,7 +7,7 @@ export default function AboutPage() {
       {/* アイコンセクション */}
       <section className="flex flex-col items-center mb-6 sm:mb-8 text-center">
         <Image
-          src="/images/profile/avatar2.jpg"
+          src="/images/profile/avatar3.jpg"
           alt="pen2"
           width={128}
           height={128}
