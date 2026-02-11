@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import PostCard from "@/components/PostCard"
 import type { Post } from "@/lib/posts"
-import { MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
+import { MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline"
 
 type PostsListProps = {
   posts: Post[]
@@ -14,7 +14,9 @@ export default function PostsList({ posts }: PostsListProps) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
+  const [showAllTags, setShowAllTags] = useState(false)
   const postsPerPage = 5
+  const initialTagsToShow = 8
 
   const filteredPosts = posts
     .filter((post) => !selectedTag || post.tags.includes(selectedTag))
@@ -34,6 +36,9 @@ export default function PostsList({ posts }: PostsListProps) {
   }, [searchQuery, selectedTag])
 
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
+
+  const displayedTags = showAllTags ? allTags : allTags.slice(0, initialTagsToShow)
+  const hasMoreTags = allTags.length > initialTagsToShow
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -68,7 +73,7 @@ export default function PostsList({ posts }: PostsListProps) {
           >
             すべて
           </button>
-          {allTags.map((tag) => (
+          {displayedTags.map((tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
@@ -81,6 +86,24 @@ export default function PostsList({ posts }: PostsListProps) {
               {tag}
             </button>
           ))}
+          {hasMoreTags && (
+            <button
+              onClick={() => setShowAllTags(!showAllTags)}
+              className="px-4 py-2 rounded-full text-sm font-medium bg-neon-slate text-neon-text hover:bg-neon-card border border-neon-border transition-all duration-300 flex items-center gap-1"
+            >
+              {showAllTags ? (
+                <>
+                  閉じる
+                  <ChevronUpIcon className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  もっと見る
+                  <ChevronDownIcon className="h-4 w-4" />
+                </>
+              )}
+            </button>
+          )}
         </div>
       </div>
 
